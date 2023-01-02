@@ -1,5 +1,5 @@
-export const INCREMENT ="INCREMENT";
-export const DECREMENT ="DECREMENT";
+import { DECREMENT, INCREMENT } from "../actionTypes/countActionTypes"
+
 
 
 export const incrementNumber = (number) => {

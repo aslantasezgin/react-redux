@@ -1,4 +1,4 @@
-import { SET_USERNAME } from "../actions/userActions"
+import { SET_USERNAME } from "../actionTypes/userActionTypes"
 
 
 const initialUserState={
