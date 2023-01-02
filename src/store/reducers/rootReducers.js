@@ -1,3 +1,22 @@
+import { combineReducers } from "redux"
+
+
+
+const initialUserState={
+    userName:0
+}
+
+function userReducer(state = initialUserState,action){
+    switch(action.type){
+        case "SET_USERNAME":
+        return {userName: action.payload}
+        default:
+        return state
+    }
+
+}
+
+
 
 
 const initialState={
@@ -15,4 +34,10 @@ switch(action.type){
 }
 }
 
-export default rootReducer
+
+const reducer = combineReducers({
+    count : rootReducer,
+    user: userReducer
+})
+
+export default reducer
