@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
+import { setUserName, SET_USERNAME } from './store/actions/userActions';
+import { DECREMENT, decrementNumber, INCREMENT, incrementNumber } from './store/actions/countActions';
 
 function App() {
 
@@ -19,29 +21,18 @@ function App() {
         }}></input>
         <p>NAME : {userState.userName} </p>
         <button onClick={() => {
-          dispatch({
-            type:"SET_USERNAME",
-            payload:userName
-          })
+          dispatch(setUserName(userName))
         }}>Change Name</button>
 
         
 
       <p>SAYI :{countState.count}</p>
       <button onClick={() => {
-        dispatch({
-          type:"INCREMENT",
-          payload:5
-
-        })
+        dispatch(incrementNumber(5))
       }} >Arttır</button>
 
 <button onClick={() => {
-        dispatch({
-          type:"DECREMENT",
-          payload:5
-
-        })
+        dispatch(decrementNumber(5))
       }} >Azalt</button>
       </header>
     </div>
